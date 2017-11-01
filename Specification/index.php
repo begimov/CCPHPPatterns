@@ -10,6 +10,16 @@ class Lesson
     }
 }
 
+class User
+{
+    public $active = true;
+
+    public function __construct($active = true)
+    {
+        $this->active = $active;
+    }
+}
+
 class IsActive
 {
     public function isSatisfiedBy($item)
@@ -19,5 +29,6 @@ class IsActive
 }
 
 $lesson = new Lesson();
-$specification = (new IsActive)->isSatisfiedBy($lesson);
+$user = new User(false);
+$specification = (new IsActive)->isSatisfiedBy($user);
 
